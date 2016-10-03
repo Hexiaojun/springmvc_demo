@@ -1,0 +1,30 @@
+group 'springaop'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.spring.io/release" }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.aspectj:aspectjweaver:1.8.9'
+    compile("org.springframework:spring-context:4.3.2.RELEASE")
+    testCompile("org.springframework:spring-test:4.3.2.RELEASE")
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.2.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-web
+    compile group: 'org.springframework', name: 'spring-web', version: '4.3.2.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.2.RELEASE'
+    // https://mvnrepository.com/artifact/javax.inject/javax.inject
+//    compile group: 'javax.inject', name: 'javax.inject', version: '1'
+    // https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+    compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3'
+}
