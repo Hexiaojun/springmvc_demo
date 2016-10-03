@@ -1,6 +1,8 @@
 # springmvc_demo
 ###自己整理的一个spring mvc的入门demo
+
 包含
+
 1. 返回渲染的jsp页面
 2. 处理GET/POST请求，在请求方法为GET的时候，支持Restful风格的url
 3. 处理文件上传（demo为上传图片）
