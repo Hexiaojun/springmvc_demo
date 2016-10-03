@@ -3,10 +3,7 @@ package com.conteoller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import po.Student;
 import service.StudentQueryService;
@@ -118,7 +115,7 @@ public class StudentController {
             try {
                 stream = file.getInputStream();
                 outputStream = new FileOutputStream("C:/Users/chenglei/Desktop/s.png");
-                int len = -1;
+                int len;
                 byte[] bytes = new byte[1024];
                 while ((len = (stream.read(bytes))) != -1) {
                     outputStream.write(bytes, 0, len);
@@ -137,4 +134,20 @@ public class StudentController {
 
         return "upload_success";
     }
+
+    /**
+     * 获取student的json数据！
+     *
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/restful/{id}", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Student getStudentJson(
+            @PathVariable Integer id
+    ) {
+        return studentQueryService.getStuNameById(id);
+    }
+
 }
