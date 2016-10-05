@@ -6,6 +6,7 @@
 1. 返回渲染的jsp页面
 2. 处理GET/POST请求，在请求方法为GET的时候，支持Restful风格的url
 3. 处理文件上传（demo为上传图片）
+4. 返回json数据
 
 项目使用Gradle构建
 
