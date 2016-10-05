@@ -62,4 +62,16 @@
         <property name="resolveLazily" value="true"/>
     </bean>
 
+    <!--注册拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--配置拦截器class和拦截器的请求路径-->
+            <mvc:mapping path="/encoding/login"/>
+            <bean class="Interceptor.in.TestInterceptor"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/encoding/login"/>
+            <bean class="Interceptor.in.Test2Interceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
